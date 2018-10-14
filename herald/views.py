@@ -38,7 +38,7 @@ class TestNotification(View):
         index = int(kwargs['index'])
         render_type = kwargs['type']
 
-        obj = registry._registry[index](*registry._registry[index].get_demo_args())  # pylint: disable=W0212
+        obj = registry._registry[index](*registry._registry[index].get_demo_args(request))  # pylint: disable=W0212
 
         context = obj.get_context_data()
 
